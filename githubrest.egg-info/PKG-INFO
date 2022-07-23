@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: githubrest
+Version: 0.0.1
+Summary: rest gitub wrapper
+Home-page: UNKNOWN
+Author: stephanie
+Author-email: author@example.com
+License: UNKNOWN
+Description: 
+        <p>
+        This is a demo python library wrapper for the github rest api 
+        https://docs.github.com/en/rest/
+        </p>
+        
+        
+        ## <div align="center">User Guide</div>
+        
+        <summary>Install</summary>
+        
+        Clone repo and install [requirements.txt](https://github.com/stephanielewkowitz/githubrest)
+        
+        ```bash
+        cd bdist
+        python3 pip install githubrest*.whl  # install
+        ```
+        
+        <summary>Examples</summary>
+        
+        ```bash
+        
+        import repositories
+        import events
+        import branches
+        
+        repo = repositories.Repos(TOKEN, USER)
+        output = repo.list_repos()
+        output2 = repo.create_repo()
+        
+        event = events.Events(TOKEN, USER)
+        output3 = event.list_events()
+        output4 = event.list_repo_events(repo_name)
+        
+        branch = branches.Branches(TOKEN, USER)
+        output5 = branch.get_branches(repo_name)
+        output6 = branch.rename_branch(repo_name, branch_name, new_branch_name)
+        
+        ```
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

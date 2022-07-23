@@ -1,0 +1,11 @@
+README.md
+setup.py
+githubrest/__init__.py
+githubrest/authentication.py
+githubrest/branches.py
+githubrest/events.py
+githubrest/repositories.py
+githubrest.egg-info/PKG-INFO
+githubrest.egg-info/SOURCES.txt
+githubrest.egg-info/dependency_links.txt
+githubrest.egg-info/top_level.txt
