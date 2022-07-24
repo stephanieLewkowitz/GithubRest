@@ -9,13 +9,21 @@ https://docs.github.com/en/rest/
 
 <summary>Install</summary>
 
+<p>
 Clone repo and install [requirements.txt](https://github.com/stephanielewkowitz/githubrest)
+</p>
 
 ```bash
-cd bdist
-python3 pip install githubrest*.whl  # install
+python3 setup.py bdist_wheel
+cd dist
+python3 -m pip install githubrest-0.0.1-py3-none-any.whl.whl  # install
 ```
-
+<p>
+If the install directory is on the python path, the library should now be installed.
+</p>
+<p>
+We are using the python "requests" library to make rest calls to the github api. We also need to provide a github user account and personal access token.
+</p>
 <summary>Examples</summary>
 
 ```bash
@@ -23,15 +31,23 @@ python3 pip install githubrest*.whl  # install
 import githubrest
 
 repo = githubrest.Repos(TOKEN, USER)
-output = repo.list_repos()
-output2 = repo.create_repo()
+
+status, response = repo.list_repos()
+status, response  = repo.create_repo(repo_name)
 
 event = githubrest.Events(TOKEN, USER)
-output3 = event.list_events()
-output4 = event.list_repo_events(repo_name)
+status, response  = event.list_events()
+status, response  = event.list_repo_events(repo_name)
 
 branch = githubrest.Branches(TOKEN, USER)
-output5 = branch.get_branches(repo_name)
-output6 = branch.rename_branch(repo_name, branch_name, new_branch_name)
+status, response  = branch.get_branches(repo_name)
+status, response  = branch.rename_branch(repo_name, branch_name, new_branch_name)
+
+```
+a 200 or 201 status indicates a successful response from the server. A 400 status indicates an error. 
+
+
+```
+
 
 ```
