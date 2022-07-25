@@ -52,8 +52,8 @@ a 200 or 201 status indicates a successful response from the server. A 400 statu
 <p>
 The input patch_data for Repos.patch_repo(repo_name, patch_data) should be in this dictionary format:
 </p>
-```
-patch_data = {
+
+```patch_data = {
 "name":"Hello-World",
 "description":"This is your first repository",
 "homepage":"https://github.com",
