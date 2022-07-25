@@ -23,6 +23,7 @@ If the install directory is on the python path, the library should now be instal
 </p>
 <p>
 We are using the python "requests" library to make rest calls to the github api. We also need to provide a github user account and personal access token.
+
 </p>
 <summary>Examples</summary>
 
@@ -44,10 +45,24 @@ status, response  = branch.get_branches(repo_name)
 status, response  = branch.rename_branch(repo_name, branch_name, new_branch_name)
 
 ```
+<p>
 a 200 or 201 status indicates a successful response from the server. A 400 status indicates an error. 
+</p>
 
+<p>
+The input patch_data for Repos.patch_repo(repo_name, patch_data) should be in this dictionary format:
+</p>
+```
+patch_data = {
+"name":"Hello-World",
+"description":"This is your first repository",
+"homepage":"https://github.com",
+"private":True,
+"has_issues":True,
+"has_projects":True,
+"has_wiki":True}
 
 ```
 
 
-```
+
